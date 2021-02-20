@@ -1,0 +1,38 @@
+@use './constant.scss';
+
+html,
+body {
+  background-color: constant.$base_color;
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  color: constant.$white_color;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.fade {
+  &-enter, &-appear {
+    opacity: 0;
+  }
+  &-exit-active {
+    opacity: 0 !important;
+  }
+  &-exit {
+    opacity: 1;
+  }
+  &-enter-active, &-appear-active {
+    opacity: 1 !important;
+  }
+  &-enter-active, &-exit-active, &-appear-active {
+    transition: opacity 300ms;
+  }
+}

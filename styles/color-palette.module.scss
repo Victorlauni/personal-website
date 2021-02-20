@@ -1,0 +1,32 @@
+@use './constant.scss';
+
+.root {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: calc(100vh - 60px);
+  & div {
+    flex-grow: 0.25;
+    height: 100%;
+  }
+}
+
+.base_color {
+  background-color: constant.$base_color;
+}
+
+.dark_color {
+  background-color: constant.$dark_color;
+}
+
+.main_color {
+  background-color: constant.$main_color;
+}
+
+.light_color {
+  background-color: constant.$light_color;
+}
+
+.white_color {
+  background-color: constant.$white_color;
+}

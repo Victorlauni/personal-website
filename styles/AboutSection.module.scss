@@ -1,0 +1,41 @@
+@use './constant.scss';
+
+.root {
+  max-width: 800px;
+  min-width: min(600px, 100%);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  & h1 {
+    border-bottom: 2px solid constant.$light_color;
+    display: inline;
+  }
+  margin-bottom: 30px;
+}
+
+.img {
+  margin-left: 20px;
+  box-shadow: 3px 3px 5px constant.$dark_color;
+  width: 250px;
+  border-radius: 5px;
+  float: right;
+}
+
+@media only screen and (max-width: constant.$break_point_mobile) {
+  .img {
+    width: 200px;
+    float: none;
+    margin: 0px;
+  }
+  .mainContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.mainContent {
+  width: 100%;
+}

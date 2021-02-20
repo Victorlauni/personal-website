@@ -1,0 +1,37 @@
+@use './constant.scss';
+
+.root {
+  height: 60px;
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  opacity: 100% !important;
+  & > a {
+    position: relative;
+    width: 100px;
+    text-align: center;
+    color: constant.$white_color;
+    padding: 4px 20px;
+    margin: 0px 3px;
+    transition: 200ms;
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}
+
+.link_active {
+  &::after {
+    content: "";
+    width: 65%;
+    height: 100%;
+    border-bottom: 2px solid constant.$light_color;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+  }
+}
