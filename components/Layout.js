@@ -15,6 +15,7 @@ export default function Layout(props) {
           key={router.asPath}
           classNames="fade"
           timeout={300}
+          exit={false}
           appear={true}
           in={true}
         >
