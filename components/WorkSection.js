@@ -1,14 +1,24 @@
+import moment from 'moment';
 import React from 'react'
 import styles from '../styles/WorkSection.module.scss'
 import WorkRecord from './WorkRecord'
 
-export default function WorkSection() {
+export default function WorkSection(props) {
+  const {workExperiences} = props;
   return (
     <div className={styles.root}>
       <h1>Work Experience</h1>
-      <WorkRecord startDate="Jul 2020" endDate="Sep 2020" position="Full-Stack Developer Intern" company="Yau Mea Gau Limited">
-        <p>I am responsible to develop a web based multi-user online video chat system using WebRTC technology. </p>
-      </WorkRecord>
+      {
+        workExperiences.map((val, ind) => <WorkRecord 
+          key={val.id}
+          startDate={moment(val.startDate).format("MMM YYYY")}
+          endDate={moment(val.endDate).format("MMM YYYY")}
+          position={val.position}
+          company={val.company}
+        >
+          <p>{val.description}</p>
+        </WorkRecord>)
+      }
     </div>
   )
 }
