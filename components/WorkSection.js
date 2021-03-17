@@ -8,17 +8,26 @@ export default function WorkSection(props) {
   return (
     <div className={styles.root}>
       <h1>Work Experience</h1>
+      <div className={styles.workContainer}>
       {
-        workExperiences.map((val, ind) => <WorkRecord 
+        workExperiences.slice()
+        .sort((a, b) => {
+          if (a.current) return -1
+          if (b.current) return 1
+          else return moment(b.endDate).unix() - moment(a.endDate).unix()
+        })
+        .map((val, ind) => <WorkRecord 
           key={val.id}
-          startDate={moment(val.startDate).format("MMM YYYY")}
-          endDate={moment(val.endDate).format("MMM YYYY")}
+          startDate={moment(val.startDate).format(val.displayMonth? "MMM YYYY": "YYYY")}
+          endDate={moment(val.endDate).format(val.displayMonth? "MMM YYYY": "YYYY")}
           position={val.position}
           company={val.company}
-        >
-          <p>{val.description}</p>
-        </WorkRecord>)
+          nature={val.nature?.replace("_", "-")}
+          description={val.description}
+          current={val.current}
+        />)
       }
+      </div>
     </div>
   )
 }

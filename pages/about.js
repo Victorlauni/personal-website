@@ -30,6 +30,9 @@ export async function getStaticProps(){
           companyLogo {
             url
           }
+          current
+          displayMonth
+          display
         }
       }
     `
