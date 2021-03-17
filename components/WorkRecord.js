@@ -1,8 +1,9 @@
 import React from 'react'
 import styles from '../styles/WorkRecord.module.scss'
+import parse from 'html-react-parser'
 
 export default function WorkRecord(props) {
-  const {startDate, endDate, position, company, description, nature, current, displayMonth} = props
+  const {startDate, endDate, position, company, description, nature, current, details} = props
   return (
     <div className={styles.root}>
       <div className={styles.dateDisplay}>
@@ -12,12 +13,18 @@ export default function WorkRecord(props) {
       <div className={styles.textContainer}>
         <h1>{position} <span className={styles.nature}>{nature}</span></h1>
         <h2>{company}</h2>
-        {description?.split("\n").map(val => {
-          if (val.substring(0,2) === "- "){
-            return <p>▷ {val.substring(2)}</p>
-          }
-          else return <p>{val}</p>
-        })}
+        {/* <ul className={styles.list}>
+          {description?.split("\n").map(val => {
+            if (val.substring(0,2) === "- "){
+              return <li>{val.substring(2)}</li>
+            }
+            else return <p>{val}</p>
+          })}
+        </ul> */}
+        <div className={styles.details}>
+          {parse(details.html)}
+        </div>
+        
       </div>
     </div>
   )

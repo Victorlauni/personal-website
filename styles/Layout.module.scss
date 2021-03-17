@@ -1,6 +1,22 @@
 @use './constant.scss';
 
 .root {
-  padding: 0px 30px 30px;
+  padding: 0px 15px;
+  margin-bottom: 30px;
   min-height: 100vh;
+}
+
+@media only screen and (min-width: constant.$break_point_mobile) {
+  .root{
+    padding: 0px 30px;
+  }
+}
+
+@media only screen and (min-width: constant.$break_point_tablet) {
+  .root {
+    margin: auto;
+    margin-bottom: 30px;
+    padding: 0px;
+    width: 700px;
+  }
 }

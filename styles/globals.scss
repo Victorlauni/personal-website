@@ -1,11 +1,12 @@
 @use './constant.scss';
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
 
 html,
 body {
   background-color: constant.$base_color;
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   color: constant.$white_color;
 }
@@ -17,6 +18,26 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+h1 {
+  font-size: 1.75rem;
+}
+
+h2 {
+  font-size: 1.2rem;
+}
+
+@media only screen and (max-width: constant.$break_point_mobile) {
+  body {
+    font-size: 15px;
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+  h2 {
+    font-size: 1.1rem;
+  }
 }
 
 .fade {

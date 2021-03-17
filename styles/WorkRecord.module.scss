@@ -7,6 +7,14 @@
   width: 100%;
 }
 
+@media only screen and (max-width: constant.$break_point_mobile) {
+  .dateDisplay {
+    & p {
+      font-size: 0.9rem;
+    }
+  }
+}
+
 .dateDisplay {
   display: flex;
   flex-direction: column;
@@ -23,11 +31,10 @@
   margin-left: 10px;
   & h1 {
     margin: 0;
-    font-size: 1.75rem;
+    margin-bottom: 10px;
     color: constant.$light_color;
   }
   & h2 {
-    font-size: 1.2rem;
     margin: 0;
     margin-bottom: 20px;
     opacity: 0.7;
@@ -35,6 +42,7 @@
 }
 
 .nature {
+  white-space: nowrap;
   font-family: "inconsolata" ,monospace;
   font-style: italic;
   color: constant.$white_color;
@@ -42,5 +50,14 @@
   &::before {
     content: "// ";
     font-style: normal;
+  }
+}
+
+.details > ul {
+  padding-left: 12px;
+  list-style-position: outside;
+  & > li {
+    list-style-type: '▷';
+    padding-left: 5px;
   }
 }

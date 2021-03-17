@@ -27,6 +27,9 @@ export async function getStaticProps(){
           position
           nature
           description
+          details {
+            html
+          }
           companyLogo {
             url
           }

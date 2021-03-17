@@ -25,6 +25,7 @@ export default function WorkSection(props) {
           nature={val.nature?.replace("_", "-")}
           description={val.description}
           current={val.current}
+          details={val.details}
         />)
       }
       </div>
