@@ -15,6 +15,7 @@
 }
 
 .img {
+  margin-bottom: 5px;
   margin-left: 20px;
   box-shadow: 3px 3px 5px constant.$dark_color;
   width: 250px;
@@ -37,4 +38,42 @@
 
 .mainContent {
   width: 100%;
+}
+
+.programmingLangContainer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+@media only screen and (max-width: constant.$break_point_tablet) {
+  .programmingLangContainer {
+    clear: right;
+  }
+}
+
+.programmingLang {
+  &::before {
+    content: "# ";
+  }
+  color: constant.$main_color;
+  margin: 3px 5px;
+  border: 1px solid constant.$main_color;
+  padding: 5px;
+  white-space: nowrap;
+  border-radius: 5px;
+}
+
+.libraries {
+  &::before {
+    content: "# ";
+  }
+  color: constant.$main_color;
+  margin: 3px 5px;
+  border: 1px solid constant.$main_color;
+  padding: 5px;
+  white-space: nowrap;
+  border-radius: 5px;
+  filter: hue-rotate(45deg)
 }

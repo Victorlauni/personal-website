@@ -57,7 +57,13 @@
   padding-left: 12px;
   list-style-position: outside;
   & > li {
-    list-style-type: '▷';
+    &::before {
+      content: "▷";
+      position: absolute;
+      left: -15px;
+    }
+    position: relative;
+    list-style-type: none;
     padding-left: 5px;
   }
 }
