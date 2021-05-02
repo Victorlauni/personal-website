@@ -27,9 +27,9 @@ export default function Navbar() {
       <Link href="/about">
         <a className={router.asPath == '/about' ? style.link_active : undefined}>About</a>
       </Link>
-      {/* <Link href="/portfolio">
-        <a className={router.asPath == '/portfolio' ? style.link_active : undefined}>Portfolio</a>
-      </Link> */}
+      <Link href="/project">
+        <a className={router.asPath == '/project' ? style.link_active : undefined}>Project</a>
+      </Link>
     </div>
   )
 }

@@ -1,0 +1,15 @@
+@use './constant.scss';
+
+.root {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  & > h1 {
+    border-bottom: 2px solid constant.$light_color;
+    display: inline;
+  }
+  margin-bottom: 30px;
+}

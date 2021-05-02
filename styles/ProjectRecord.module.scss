@@ -1,0 +1,68 @@
+@use './constant.scss';
+
+.root {
+  width: 100%;
+  border: 1px solid constant.$dark_color;
+  margin: 10px 0px 30px;
+  margin-right: 10px;
+  transition: all 150ms ease-in-out;
+  border-radius: 10px;
+  padding-left: 10px;
+  & > img {
+    max-width: 30%;
+    float: right;
+    margin-top: -10px;
+    margin-right: -10px;
+    border-radius: 40px 10px 10px 10px;
+    margin-bottom: 20px;
+  }
+  //overflow: hidden;
+}
+
+@media only screen and (max-width: constant.$break_point_tablet) {
+  .root {
+    & > img {
+      max-width: 100%;
+      margin-top: 5px;
+      margin-left: -5px;
+      float: none;
+      border-radius: 10px;
+    }
+  }
+}
+
+.root:hover {
+  transform: scale(1.03);
+  box-shadow: 3px 2px 5px constant.$dark_color;
+}
+
+.textContainer {
+  margin: 10px 0px 10px;
+  //margin-left: 10px;
+  & h1 {
+    margin: 0;
+    margin-bottom: 10px;
+    color: constant.$light_color;
+  }
+  & h2 {
+    margin: 0;
+    margin-bottom: 20px;
+    opacity: 0.7;
+  }
+}
+
+.tagContainer {
+  display: flex;
+  flex-direction: row;
+  & > p {
+    font-family: "inconsolata" ,monospace;
+    white-space: nowrap;
+    border-radius: 10px;
+    border: 1px solid constant.$white_color;
+    display: inline;
+    padding: 5px;
+    background-color: #FFF1;
+    margin: 5px 0px;
+    margin-right: 10px;
+  }
+}
