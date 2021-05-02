@@ -7,8 +7,8 @@ export default function ProjectRecord(props) {
       <img src={project.preview?.url}></img>
       <div className={styles.textContainer}>
         <h1>{project.title}</h1>
-        {project.description?.split("\n").map(val => <p>{val}</p>)}
-        <div className={styles.tagContainer}>{project.category?.map(val => <p>{val}</p>)}</div>
+        {project.description?.split("\n").map((val, ind) => <p key={ind}>{val}</p>)}
+        <div className={styles.tagContainer}>{project.category?.map((val, ind) => <p key={ind}>{val}</p>)}</div>
       </div>
       
     </div>

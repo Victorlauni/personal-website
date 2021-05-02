@@ -7,7 +7,7 @@ export default function ProjectSection(props) {
   return (
     <div className={styles.root}>
       <h1>Project</h1>
-      {projects.map(val => <ProjectRecord project={val}/>)}
+      {projects.map(val => <ProjectRecord key={val.id} project={val}/>)}
     </div>
   )
 }

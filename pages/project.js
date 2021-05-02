@@ -19,13 +19,14 @@ export async function getStaticProps(){
     query: gql`
     query {
       projects {
-      category
-      description
-      title
-      url
-      preview {
+        id
+        category
+        description
+        title
         url
-      }
+        preview {
+          url(transformation: {image: {resize: {width: 700}}})
+        }
       }
     }
     `
